@@ -1,8 +1,17 @@
 const gridContainer = document.querySelector("#grid-container");
 const resetButton = document.querySelector("#reset-button");
+const reset = document.querySelector("#reset");
 
+reset.addEventListener("click", resetColor);
 window.addEventListener("load", setDefaultGrid);
 resetButton.addEventListener("click", changeSize);
+
+function resetColor() {
+    const gridElements = gridContainer.querySelectorAll(".grid-element");
+    gridElements.forEach(function(element) {
+        element.style.backgroundColor = "#ffffff";
+    })
+}
 
 function setDefaultGrid() {
     setGridSize(16);
